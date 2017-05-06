@@ -7,6 +7,9 @@ Description: Collection of miscellaneous utility functions.
 License: GPL-3
 URL: https://github.com/stewid/SWmisc
 BugReports: https://github.com/stewid/SWmisc/issues
+Suggests:
+    rgdal,
+    sp
 Type: Package
 LazyData: true
 RoxygenNote: 6.0.1
