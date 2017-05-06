@@ -11,7 +11,19 @@
 ##'     \url{http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units}
 ##' @export
 ##' @examples
-##' plot(sweden())
+##' plot(sweden(), usePolypath = FALSE)
+##'
+##' SpatialPolygonsRescale(layout.scale.bar(),
+##'                        offset = list(x = 1603000, y = 6161447),
+##'                        scale = 200000,
+##'                        fill = c("transparent", "black"),
+##'                        plot.grid = FALSE)
+##' text(x = 1605000, y = 6207531, label = "0")
+##' text(x = 1830000, y = 6207531, label = "200 km")
+##' SpatialPolygonsRescale(layout.north.arrow(1),
+##'                        offset = list(x = 1780000, y = 6261447),
+##'                        scale = 100000,
+##'                        plot.grid = FALSE)
 sweden <- function(scale = c("1:20 Million", "1:1 Million",
                              "1:3 Million", "1:10 Million",
                              "1:60 Million"),
