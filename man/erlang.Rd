@@ -19,3 +19,19 @@ distribtion.}
 \description{
 Create a model for an Erlang distribution in SimInf
 }
+\examples{
+library(SimInf)
+library(SWmisc)
+
+shape <- 100
+m <- erlang("A", "B", shape, rate = shape / 730)
+u0 <- matrix(c(100, rep(0, length(m$compartments) - 1)),
+             ncol = length(m$compartments))
+u0 <- as.data.frame(u0)
+colnames(u0) <- m$compartments
+m <- mparse(m$transitions, m$compartments)
+model <- init(m, u0, 1:1000)
+plot(as.numeric(SimInf:::extract_U(run(model), "B")),
+     type = "l", ylab = "Number of individuals in B compartment",
+     xlab = "Time [day]")
+}
